@@ -13,3 +13,7 @@ target_link_libraries(ex1 gtest)
 add_executable(ex2 ex2_standard_exceptions.cpp)
 target_link_libraries(ex2 gtest)
 
+# exercise 3
+add_executable(ex3 ex3_custom_exceptions.cpp)
+target_link_libraries(ex3 gtest)
+
