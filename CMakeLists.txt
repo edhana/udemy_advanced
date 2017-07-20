@@ -17,3 +17,7 @@ target_link_libraries(ex2 gtest)
 add_executable(ex3 ex3_custom_exceptions.cpp)
 target_link_libraries(ex3 gtest)
 
+# exercise 4 
+add_executable(ex4 ex4_subclass_exception_catching.cpp)
+target_link_libraries(ex4 gtest)
+
