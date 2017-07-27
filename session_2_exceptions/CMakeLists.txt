@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 2.8.11)
-set(TARGET cpluplus-test)
-set(GTEST_SUBDIR googletest)
+set(TARGET udemy_exeptions)
 
 project(${TARGET})
-add_subdirectory(${GTEST_SUBDIR})
+
+# link_directories(../${PROJECT_SOURCE_DIR}/lib)
 
 # exercise 1
 add_executable(ex1 test_ex1_exception.cpp)
