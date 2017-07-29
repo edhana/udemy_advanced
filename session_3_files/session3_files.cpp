@@ -1,12 +1,46 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <experimental/filesystem> // aha! C++17 feature from boost
 #include "gtest/gtest.h"
 using namespace std;
+namespace fs = std::experimental::filesystem;
 
 const string BASE_FILENAME = "text.txt";
+const string BASE_READ_FILENAME = "text_2.txt";
 
-TEST(WritingTextFile , Ex1CreateNewFileAndWriteInside) {
+class WritingTextFileLecture6 : public ::testing::Test {
+public:
+    void TearDown() {
+        // Remove the test file
+        fstream testFile(BASE_FILENAME);
+        cout << "Inside the fixture" << endl;
+
+        if(testFile.good()) {
+            // File exists, remove it
+            fs::remove(BASE_FILENAME);
+        }
+    }
+};
+
+class ReadingTextFileLecture7 : public ::testing::Test {
+public:
+    void SetUp() {
+        ofstream outFile;
+
+        //FIXME: Create the file just once
+        outFile.open(BASE_READ_FILENAME);
+
+        if(outFile.is_open()) {
+            for(int i = 1; i <= 10; i++) {
+                outFile << "Test line " << i << endl; 
+            }
+            outFile.close();
+        }
+    }
+};
+
+TEST(WritingTextFileLecture6, Ex1CreateNewFileAndWriteInside) {
     fstream outFile;
     // ofstream outFile;
 
@@ -27,7 +61,7 @@ TEST(WritingTextFile , Ex1CreateNewFileAndWriteInside) {
 
 }
 
-TEST(WritingTextFile, Ex1ExtendedCreateNewFileWithMultipleTextLines) {
+TEST(WritingTextFileLecture6, Ex1ExtendedCreateNewFileWithMultipleTextLines) {
     fstream outFile;
     outFile.open(BASE_FILENAME, ios::out);
 
@@ -48,6 +82,10 @@ TEST(WritingTextFile, Ex1ExtendedCreateNewFileWithMultipleTextLines) {
     EXPECT_EQ(lineCount, 3);
 
     SUCCEED();
+}
+
+TEST_F(ReadingTextFileLecture7, Ex2ReadingSomethingBlabla) {
+    EXPECT_TRUE(true);
 }
 
 int main(int argc, char * argv[]) {
