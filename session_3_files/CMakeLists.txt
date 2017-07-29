@@ -3,6 +3,6 @@ set(TARGET session3_files)
 
 project(${TARGET})
 
-add_executable(${TARGET} test_ex5_files.cpp)
+add_executable(${TARGET} session3_files.cpp)
 target_link_libraries(${TARGET} gtest)
 
