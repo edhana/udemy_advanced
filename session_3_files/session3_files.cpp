@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <experimental/filesystem> // aha! C++17 feature from boost
+// #include <experimental/filesystem> // aha! C++17 feature from boost
 #include "gtest/gtest.h"
 using namespace std;
-namespace fs = std::experimental::filesystem;
+// namespace fs = std::experimental::filesystem;
 
 const string BASE_FILENAME = "text.txt";
 const string BASE_READ_FILENAME = "text_2.txt";
@@ -18,7 +18,7 @@ public:
 
         if(testFile.good()) {
             // File exists, remove it
-            fs::remove(BASE_FILENAME);
+            // fs::remove(BASE_FILENAME);
         }
     }
 };
