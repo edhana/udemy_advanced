@@ -21,5 +21,5 @@ add_subdirectory(${GTEST_SUBDIR})
 add_subdirectory(session_2_exceptions)
 add_subdirectory(session_3_files)
 add_subdirectory(stl_youtube_study)
-
+add_subdirectory(codility_challenge)
 
