@@ -79,6 +79,18 @@ TEST(CodilityChallenge1, ShouldTestWithTreeElements) {
     EXPECT_EQ(solution(&teste), 3);
 }
 
+TEST(CodilityChallenge1, ShoudTest1LevelElementCountTree) {
+    tree t, lt, rt, llt, lrt;
+    llt = {1, NULL, NULL};
+    lrt = {2, NULL, NULL};
+
+    rt =  {5, NULL, NULL};
+
+    lt = {3, &llt, &lrt};
+    t = {10, &lt, &rt};
+    EXPECT_EQ(solution(&t), 1);
+    
+}
 
 int main(int argc, char * argv[]) {
     ::testing::InitGoogleTest(&argc, argv);
