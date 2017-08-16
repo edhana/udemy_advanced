@@ -89,7 +89,6 @@ TEST(CodilityChallenge1, ShoudTest1LevelElementCountTree) {
     lt = {3, &llt, &lrt};
     t = {10, &lt, &rt};
     EXPECT_EQ(solution(&t), 1);
-    
 }
 
 int main(int argc, char * argv[]) {
