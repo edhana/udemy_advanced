@@ -3,8 +3,6 @@ set(TARGET session3_files)
 
 project(${TARGET})
 
+# GOTCHA: For experimental stuff you need to link against libstdc++fs
 add_executable(${TARGET} session3_files.cpp)
-target_link_libraries(${TARGET} gtest)
-
-
-
+target_link_libraries(${TARGET} gtest stdc++fs)
