@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.11)
-set(TARGET session3_files)
+set(TARGET session3)
 
 project(${TARGET})
 

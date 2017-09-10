@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 2.8.11)
-set(TARGET udemy_exeptions)
+set(TARGET session2)
 
 project(${TARGET})
-
-# link_directories(../${PROJECT_SOURCE_DIR}/lib)
 
 # exercise 1
 add_executable(ex1 test_ex1_exception.cpp)
@@ -17,7 +15,6 @@ target_link_libraries(ex2 gtest)
 add_executable(ex3 ex3_custom_exceptions.cpp)
 target_link_libraries(ex3 gtest)
 
-# exercise 4 
+# exercise 4
 add_executable(ex4 ex4_subclass_exception_catching.cpp)
 target_link_libraries(ex4 gtest)
-
